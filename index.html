@@ -246,6 +246,7 @@
   <div>
     <a href="#drones">Drones</a>
     <a href="#daas">DaaS</a>
+    <a href="#engine">Engine</a>
     <a href="#specs">Specs</a>
     <a href="#accessories">Accessories</a>
     <a href="http://sin-asustufdashf15fx517zcfx517zc:8777" target="_blank">Ops</a>
@@ -570,6 +571,78 @@
   </div>
 </section>
 
+<!-- Twilight Elysium Engine Section -->
+<section id="engine" style="background: var(--surface); border-radius: 24px; margin-top: 2rem; padding: 100px 2rem;">
+  <h2 class="section-title" style="text-align:center">Twilight Elysium Engine</h2>
+  <p class="section-subtitle" style="text-align:center;margin:0 auto 3rem;max-width:700px">Real-time simulation engine for autonomous systems. Physics, AI, and rendering unified — from drone swarms to virtual worlds.</p>
+  <div class="daas-grid">
+    <div class="daas-card">
+      <h3>Indie</h3>
+      <div class="price">$49<span>/mo</span></div>
+      <p>Per seat · Monthly billing</p>
+      <ul>
+        <li>Core engine (C++ / Python API)</li>
+        <li>Physics simulation (Havok-compatible)</li>
+        <li>AI behavior trees + planning</li>
+        <li>Vulkan + DirectX 12 renderer</li>
+        <li>Community Discord support</li>
+        <li>MIT-licensed sample projects</li>
+      </ul>
+      <button class="btn btn-small btn-outline" onclick="openOrder('Twilight Elysium Engine - Indie', 49, true)">Subscribe</button>
+    </div>
+
+    <div class="daas-card featured">
+      <span class="badge badge-popular" style="position:absolute;top:1rem;right:1rem">Popular</span>
+      <h3>Pro</h3>
+      <div class="price">$199<span>/mo</span></div>
+      <p>Per seat · Monthly billing</p>
+      <ul>
+        <li>Everything in Indie</li>
+        <li>Source code access (GitHub)</li>
+        <li>Advanced AI modules (LLM integration)</li>
+        <li>Distributed simulation clustering</li>
+        <li>Custom asset pipeline</li>
+        <li>Priority email support (24h SLA)</li>
+        <li>CI/CD pipeline templates</li>
+      </ul>
+      <button class="btn btn-small" onclick="openOrder('Twilight Elysium Engine - Pro', 199, true)">Subscribe</button>
+    </div>
+
+    <div class="daas-card">
+      <h3>Enterprise</h3>
+      <div class="price">$799<span>/mo</span></div>
+      <p>Per seat · Annual commitment</p>
+      <ul>
+        <li>Everything in Pro</li>
+        <li>Unlimited seats (site license)</li>
+        <li>Dedicated solutions engineer</li>
+        <li>Custom feature development</li>
+        <li>On-premise deployment support</li>
+        <li>SLA: 4h critical, 8h standard</li>
+        <li>Legal indemnification</li>
+        <li>Training workshops included</li>
+      </ul>
+      <button class="btn btn-small btn-outline" onclick="openOrder('Twilight Elysium Engine - Enterprise', 799, true)">Subscribe</button>
+    </div>
+
+    <div class="daas-card">
+      <span class="badge badge-best" style="position:absolute;top:1rem;right:1rem;background:rgba(240,160,48,0.15);color:var(--accent3);border-color:rgba(240,160,48,0.3)">Best Value</span>
+      <h3>Perpetual License</h3>
+      <div class="price">$499<span>/seat</span></div>
+      <p>One-time · Lifetime updates</p>
+      <ul>
+        <li>Full Pro tier features</li>
+        <li>Perpetual license (no subscription)</li>
+        <li>Major version updates included</li>
+        <li>Source code access</li>
+        <li>No seat limits (your org)</li>
+        <li>Email support (1yr included)</li>
+      </ul>
+      <button class="btn btn-small" onclick="openOrder('Twilight Elysium Engine - Perpetual License', 49900, false)">Buy License</button>
+    </div>
+  </div>
+</section>
+
 <!-- Specs Section -->
 <section id="specs">
   <h2 class="section-title">Technical Specifications</h2>
@@ -769,19 +842,25 @@ async function trackOrder() {
     document.getElementById(`${section}-${tab}`).classList.add('active');
   }
 
-  // ── Stripe Configuration ──
+// ── Stripe Configuration ──
   // After creating products in Stripe, paste your Price IDs below.
   // Get them from: https://dashboard.stripe.com/products
   // Example: "price_1ABCDEFGHIJKLMNOPQRSTUVWX"
   const STRIPE_CONFIG = {
     publicKey: "pk_test_51TkwPEAF5qKRqiGo8GJ375a6jeQiptSPlxDIQfYCUMbDmeNr09xofutbyjX0RiDXxdmvx4x5uEX5UNsVBKcifQcp00BifaCCeb",
     prices: {
-      scout: "price_1TkwfeAF5qKRqiGoQ7kRzUvv",
-      pollinator: "price_1TkwffAF5qKRqiGoYpFNyE4K",
-      complete: "price_1TkwfgAF5qKRqiGoAdSGnImi",
-      daas_scout: "price_1TkwfiAF5qKRqiGorNmHWTOP",
-      daas_grower: "price_1TkwfjAF5qKRqiGoLjcHdZsR",
-      daas_swarm: "price_1TkwfkAF5qKRqiGo1YpXvITW",
+      // Aerovora Industries
+      scout: "price_1TvlDDA8VBL5OKVGvEvfKVhl",
+      pollinator: "price_1TvlDEA8VBL5OKVGa8pxVroV",
+      complete: "price_1TvlDEA8VBL5OKVGFAYAK3L4",
+      daas_scout: "price_1TvlDFA8VBL5OKVGa9kwhwAd",
+      daas_grower: "price_1TvlDFA8VBL5OKVGydEm2x1u",
+      daas_swarm: "price_1TvlDFA8VBL5OKVG0XTvkOKT",
+      // Twilight Elysium Engine
+      te_indie: "price_1Tvkz3A8VBL5OKVGxbOC6IyX",
+      te_pro: "price_1Tvkz3A8VBL5OKVG4SEvTNHt",
+      te_enterprise: "price_1Tvkz3A8VBL5OKVGOkV6tw3Y",
+      te_perpetual: "price_1Tvkz4A8VBL5OKVGLdtU27pi",
     }
   };
 
@@ -851,6 +930,11 @@ async function trackOrder() {
       'DaaS Scout': STRIPE_CONFIG.prices.daas_scout,
       'DaaS Grower': STRIPE_CONFIG.prices.daas_grower,
       'DaaS Swarm': STRIPE_CONFIG.prices.daas_swarm,
+      // Twilight Elysium Engine
+      'Twilight Elysium Engine - Indie': STRIPE_CONFIG.prices.te_indie,
+      'Twilight Elysium Engine - Pro': STRIPE_CONFIG.prices.te_pro,
+      'Twilight Elysium Engine - Enterprise': STRIPE_CONFIG.prices.te_enterprise,
+      'Twilight Elysium Engine - Perpetual License': STRIPE_CONFIG.prices.te_perpetual,
     };
     return map[product] || null;
   }
